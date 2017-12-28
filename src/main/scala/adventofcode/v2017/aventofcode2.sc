@@ -517,7 +517,6 @@ val frases = """kvvfl kvvfl olud wjqsqa olud frc
 val lines = frases.split("\n").toList.map { line =>
   "\\s+".r.split(line).toList.filter(_ != "")
 }
-lines.size
 def isValid(line: List[String]) = {
   (line |@| line) {_ == _}.foldLeft(0)((acc: Int, n:Boolean) => if (n) acc + 1 else acc) == line.size
 }
